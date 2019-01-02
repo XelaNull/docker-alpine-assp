@@ -2,22 +2,22 @@
 FROM alpine:3.8
 
 ENV TZ=America/New_York
-ENV MY_NAME=MX-EDGE.Shouden.Us
-ENV MAILADMIN=mrathbone@orbitalgrooves.com
-ENV ASSP_PASS=assp4me
-ENV SMTP_DESTINATION=10.0.42.23:25
-ENV SMTP_DESTINATION_SSL=10.0.42.23:465
-ENV ACCEPT_ALL_MAIL=174.109.35.168|172.98.202.168|10.0.42.23|127.0.0.1|10.0.42.
+ENV MY_NAME=mail.yourdomain.com
+ENV MAILADMIN=youremail@addresshere.com
+ENV ASSP_PASS=YOUR-ASSP-PASSWORD-HERE
+ENV SMTP_DESTINATION=mail.YOURMAILSMTPSERVER.com:25
+ENV SMTP_DESTINATION_SSL=mail.YOURMAILSMTPSERVER.com:465
+ENV ACCEPT_ALL_MAIL=your.ip.here|partial.ip.here
 ENV RELAY_HOST=127.0.0.1:1025
 ENV RELAY_PORT=2025
-ENV ALLOW_RELAY_CON=174.109.35.168|10.0.42.|10.0.41.
-ENV DEFAULT_LOCALHOST=orbitalgrooves.com
-ENV SEND_HAM_INBOUND=ham.j2bgtj41o@orbitalgrooves.com
-ENV SEND_HAM_OUTBOUND=ham.j2bgtj41o@orbitalgrooves.com
-ENV POSTMASTER=postmaster@orbitalgrooves.com
-ENV LOCAL_DOMAINS=orbitalgrooves.com|aeyvi.com|dragonheart.net|shouden.us|hydroberry.orbitalgrooves.com|assp.orbitalgrooves.com
-ENV MY_SERVER_RE=172.8.202.167|10.0.42.22|mail.orbitalgrooves.com|mail.aeyvi.com|mail.dragonheart.net|assp.orbitalgrooves.com|mail.shouden.us
-ENV NO_DELAY=@netflix.com|@tumblr.com|@adobe.com|@vmware.com
+ENV ALLOW_RELAY_CON=your.ip.here|partial.ip.here
+ENV DEFAULT_LOCALHOST=yourdomain.com
+ENV SEND_HAM_INBOUND=ham.j2bgtj41o@yourdomain.com
+ENV SEND_HAM_OUTBOUND=ham.j2bgtj41o@yourdomain.com
+ENV POSTMASTER=postmaster@yourdomain.com
+ENV LOCAL_DOMAINS=yourdomain.com|yourseconddomain.org
+ENV MY_SERVER_RE=your.external.ip|your.internal.ip|mail.yourdomain.com
+ENV NO_DELAY=@netflix.com
 
 # Set the Alpine APK Repositories to use
 RUN {  echo '@edge http://nl.alpinelinux.org/alpine/edge/main'; \
