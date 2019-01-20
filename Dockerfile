@@ -118,7 +118,7 @@ RUN printf '[supervisord]\nnodaemon=true\nuser=root\nlogfile=/var/log/supervisor
     printf '#!/bin/bash \necho "[program:$1]";\necho "process_name  = $1";\n\
 echo "autostart     = true";\necho "autorestart   = false";\necho "directory     = /";\n\
 echo "command       = $2";\necho "startsecs     = 3";\necho "priority      = 1";\n\n' > /gen_sup.sh && \    
-    chmod a+x /*.sh && \
+    chmod a+x /*.sh
     
 RUN printf '#!/bin/bash\necho "sed -i \'s|$1|$2|g\' /usr/share/assp/assp.cfg"' > /assp_cfg.sh && \
     /assp_cfg.sh 'runAsUser:=' "runAsUser:=assp" >> /custom.cfg && \
